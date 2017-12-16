@@ -29,12 +29,9 @@ defmodule Aoc.Day3 do
     end
 
     def part_2(directions) do
-      robo_directions = directions |> Enum.take_every(2)
-      santa_directions = directions |> Enum.drop(1) |> Enum.take_every(2)
-      robo_houses = Enum.scan(robo_directions, {0, 0}, &add_vectors/2)
-      santa_houses = Enum.scan(santa_directions, {0, 0}, &add_vectors/2)
-      robo_houses ++ santa_houses 
-      |> Enum.uniq |> Enum.count
+      robo = directions |> Enum.take_every(2) |> Enum.scan({0, 0}, &add_vectors/2)
+      santa = directions |> Enum.drop(1) |> Enum.take_every(2) |> Enum.scan({0, 0}, &add_vectors/2)
+      robo ++ santa |> Enum.uniq |> Enum.count
     end
 
   end
