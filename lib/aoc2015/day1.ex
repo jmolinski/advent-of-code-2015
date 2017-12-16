@@ -1,4 +1,4 @@
-defmodule AoC2015.Day1 do
+defmodule Aoc.Day1 do
 
     def run(input) do
       input
@@ -15,8 +15,8 @@ defmodule AoC2015.Day1 do
 
     def part_2(steps) do
       Enum.reduce_while(steps, {0, 0}, 
-      fn (v, {step, acc}) -> 
-      if acc == -1, do: {:halt, step}, else: {:cont, {step + 1, acc + v}} end)
+        fn (v, {step, acc}) -> 
+        if acc == -1, do: {:halt, step}, else: {:cont, {step + 1, acc + v}} end)
     end
 
   end

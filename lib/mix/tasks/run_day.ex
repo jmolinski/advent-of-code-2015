@@ -1,4 +1,4 @@
-defmodule Mix.Tasks.Aoc2015.Day do
+defmodule Mix.Tasks.Aoc.Run do
     use Mix.Task
   
     @shortdoc "Execute the solution for a specific day"
@@ -7,6 +7,6 @@ defmodule Mix.Tasks.Aoc2015.Day do
   
     def run([day]) do
         {:ok, input_body} = File.read(@input_dir <> "day" <> day <> ".txt")
-        apply(String.to_existing_atom("Elixir.AoC2015.Day" <> day), :run, [input_body])
+        apply(String.to_existing_atom("Elixir.Aoc.Day" <> day), :run, [input_body])
     end
   end

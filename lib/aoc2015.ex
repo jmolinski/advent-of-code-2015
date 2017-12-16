@@ -1,2 +1,2 @@
-defmodule AoC2015 do
+defmodule Aoc do
 end
